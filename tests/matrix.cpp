@@ -5,7 +5,7 @@
 
 TEST_CASE("creating matrix")
 {
-    matrix_t matrix;
+    matrix_t<int> matrix;
     REQUIRE( matrix.rows() == 0 );
     REQUIRE( matrix.collumns() == 0 );
 }
@@ -17,7 +17,7 @@ TEST_CASE("reading matrix")
         "1 1 1\n"
         "2 2 2\n"
         "3 3 3" };
-    matrix_t matrix;
+    matrix_t<int> matrix;
     std::istringstream istream{ input };
     
     REQUIRE( matrix.read( istream ) );
@@ -29,7 +29,6 @@ TEST_CASE("reading matrix")
     
     REQUIRE( input == ostream.str() );
 }
-
 
 TEST_CASE("operator +")
 {
